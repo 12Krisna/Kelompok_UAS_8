@@ -1,0 +1,10 @@
+Versi Workbench yang digunakan: 8.0.45
+
+1. untuk mengimpor tabelnya saja klik file "SKEMA DATABASE tanpa FOREIGN KEY kel-sdg-8"
+2. untuk menambahkan foreign key ada 2 opsi:
+	0. masuk database dulu
+	a. lewat workbench dengan klik file "FOREIGN KEY WORKBENCH kel-sdg-8"
+	b. copy paste dari file "FOREIGN KEY kel-sdg-8"
+3. untuk melihat skema database dalam model EER Diagram, pastikan menggunakan workbench lalu klik file
+    "SKEMA DATABASE WORKBENCH kel-sdg-8"
+

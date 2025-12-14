@@ -1,0 +1,84 @@
+ALTER TABLE perusahaan
+ADD CONSTRAINT fk_perusahaan_ulasan_perusahaan
+FOREIGN KEY (id_ulasan)
+REFERENCES ulasan_perusahaan(id_ulasan);
+
+ALTER TABLE	promosi
+ADD CONSTRAINT fk_promosi_pengusaha
+FOREIGN KEY (id_pengusaha)
+REFERENCES pengusaha(id_pengusaha);
+
+ALTER TABLE	promosi
+ADD CONSTRAINT fk_promosi_perusahaan
+FOREIGN KEY (id_perusahaan)
+REFERENCES	perusahaan(id_perusahaan);
+
+ALTER TABLE	promosi
+ADD CONSTRAINT fk_promosi_pihak_ketiga
+FOREIGN KEY (id_pihaktiga)
+REFERENCES	pihak_ketiga(id_pihaktiga);
+
+ALTER TABLE	layanan_pelatihan
+ADD CONSTRAINT fk_lp_pihaktiga
+FOREIGN KEY (id_pihaktiga)
+REFERENCES	pihak_ketiga(id_pihaktiga);
+
+ALTER TABLE	pihak_ketiga
+ADD CONSTRAINT fk_pt_lowongan
+FOREIGN KEY (id_lowongan)
+REFERENCES	lowongan(id_lowongan);
+
+ALTER TABLE	perusahaan
+ADD CONSTRAINT fk_perusahaan_lowongan
+FOREIGN KEY (id_lowongan)
+REFERENCES	lowongan(id_lowongan);
+
+ALTER TABLE	lowongan
+ADD CONSTRAINT fk_lowongan_lamaran
+FOREIGN KEY (id_lamaran)
+REFERENCES	lamaran(id_lamaran);
+
+ALTER TABLE	lamaran
+ADD CONSTRAINT fk_lamaran_pekerja
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	ulasan_pekerja
+ADD CONSTRAINT fk_up_pekerja
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	komunikasi
+ADD CONSTRAINT fk_komunikasi_pekerja
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	cv
+ADD CONSTRAINT fk_cv_pekerja
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	pengalaman
+ADD CONSTRAINT fk_pengalaman
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	sertifikasi
+ADD CONSTRAINT fk_sertifikasi_pekerja
+FOREIGN KEY (id_pekerja)
+REFERENCES	pekerja(id_pekerja);
+
+ALTER TABLE	pekerja
+ADD CONSTRAINT fk_pekerja_cs
+FOREIGN KEY (id_cs)
+REFERENCES	customer_service(id_cs);
+
+ALTER TABLE	customer_service
+ADD CONSTRAINT fk_cs_admin
+FOREIGN KEY (id_admin)
+REFERENCES	admin(id_admin);
+
+ALTER TABLE	pengumuman
+ADD CONSTRAINT fk_pengumuman_admin
+FOREIGN KEY (id_admin)
+REFERENCES	admin(id_admin);
